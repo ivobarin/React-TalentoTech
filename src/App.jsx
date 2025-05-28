@@ -29,7 +29,7 @@ function App() {
       console.log("200 OK");
     } catch (error) {
       console.error("Error fetching products:", error);
-      // Si hay un error, usar productos de prueba estáticos 
+      // Si hay un error, usar productos de prueba estáticos
       setProducts(productsList);
     }
   }
@@ -78,10 +78,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>
