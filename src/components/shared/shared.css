@@ -1,4 +1,12 @@
 /* -- HEADER -- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #e5e5e5;
+  z-index: 1000;
+}
+
 nav ul {
   font-family: "Lexend Exa", sans-serif;
   display: flex;
@@ -62,7 +70,7 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
-.icon-container a:hover, 
+.icon-container a:hover,
 .icon-container button:hover {
   color: #fc9d55;
 }
@@ -76,10 +84,10 @@ footer {
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
 }
 
 footer p {
@@ -109,4 +117,20 @@ footer .social-icons a {
 }
 footer .social-icons a:hover {
   color: #fc9d55;
+}
+
+.fa-solid.fa-heart {
+  color: red;
+  font-size: 1.5em;
+}
+
+.personal-link {
+  color: #000;
+  font-weight: 500;
+  font-size: 20px;
+}
+.personal-link:hover {
+  color: #fc9d55;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
 }

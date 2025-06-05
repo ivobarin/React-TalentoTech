@@ -31,9 +31,9 @@
 
 .cart-buttons {
   display: flex;
-  gap: 10px;
   justify-content: center;
   opacity: 0;
+  padding-bottom: 1.5rem;
 }
 
 .cart-buttons.open {
@@ -43,8 +43,8 @@
 
 .cart-buttons button {
   font-family: "Lexend Exa", sans-serif;
-  font-size: small;
-  padding: 8px 16px;
+  font-size: medium;
+  padding: 16px 20px;
   background-color: #fc9d55;
   color: white;
   border: none;
@@ -55,10 +55,56 @@
 .cart-buttons button:hover {
   color: white;
   background-color: #e68a4d;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.close-cart i {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.cart-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.total {
+  color: black;
+  font-weight: 300;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background: white;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.total strong {
+  padding-left: 10px;
+  font-weight: 600;
+  color: #fc9d55;
 }
 
 .cart-items {
+  flex: 1;
   padding: 16px;
+  transition: all 0.3s ease;
 }
 
 .cart-items ul {
@@ -69,33 +115,11 @@
   font-size: large;
 }
 
-.close-cart i {
-  background: none;
-  border: none;
-  font-size: 26px;
+.fa-trash {
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.total {
-  color: black;
-  font-weight: 300;
-  padding-top: 16px;
-  display: flex;
-  justify-content: center;
+.fa-trash:hover {
+  color: #e68a4d;
 }
-
-.total strong {
-  color: #fc9d55;
-  padding-left: 10px;
-  font-weight: 600;
-}
-
-.empty-cart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 16px;
-  color: #888;
-}
-

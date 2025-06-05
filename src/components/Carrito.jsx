@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./css/Carrito.css";
 
 function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
   const [total, setTotal] = useState(0);
 
-  const calcularTotal = () => {
-    const total = carrito.reduce((acc, item) => acc + item.precio, 0);
-    setTotal(total);
-  };
+  // Calcular el total del carrito cada vez que agreguemos o eliminemos un producto
+  useEffect(() => {
+    const nuevoTotal = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+    setTotal(nuevoTotal);
+  }, [carrito]);
 
   const vaciarCarrito = () => {
     setCarrito([]);
-    setTotal(0);
+  };
+
+  const eliminarProducto = (id) => {
+    setCarrito((prevCarrito) => prevCarrito.filter((producto) => producto.id !== id));
   };
 
   return (
@@ -22,28 +26,35 @@ function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
           <i className="fa-solid fa-xmark"></i>
         </button>
       </div>
-      {carrito.length === 0 ? (
-        <p className="empty-cart">No hay productos en el carrito</p>
-      ) : (
-        <div className="cart-items">
-          <ul>
-            {carrito.map((producto, index) => (
-              <li key={producto.id + index} className="cart-item">
-                {producto.nombre} - ${producto.precio}
-              </li>
-            ))}
-          </ul>
+
+      <div className="cart-content">
+        {carrito.length === 0 ? (
+          <p className="empty-cart">No hay productos en el carrito</p>
+        ) : (
+          <div className="cart-items">
+            <ul>
+              {carrito.map((producto, index) => (
+                <li key={producto.id + index} className="cart-item">
+                  {producto.nombre} - ${producto.precio}
+                  <button className="remove-item" onClick={() => eliminarProducto(producto.id)}>
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className={`cart-buttons ${carrito.length === 0 ? "" : "open"}`}>
+          <button onClick={vaciarCarrito}>Vaciar Carrito</button>
         </div>
-      )}
-      <div className={`cart-buttons ${carrito.length === 0 ? "" : "open"}`}>
-        <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-        <button onClick={calcularTotal}>Calcular Total</button>
+
+        {total > 0 && (
+          <span className="total">
+            Total: <strong>${total}</strong>
+          </span>
+        )}
       </div>
-      {total > 0 && (
-        <span className="total">
-          Total: <strong>${total}</strong>
-        </span>
-      )}
     </div>
   );
 }

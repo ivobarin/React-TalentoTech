@@ -44,7 +44,7 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/"
+            path="/React-TalentoTech/"
             element={
               <Home
                 carrito={carrito}

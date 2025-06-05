@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1>Página no encontrada</h1>
         <p>Lo sentimos, la página que buscas no existe.</p>
         <p>
-          Puedes volver a la <Link to="/">página de inicio</Link>.
+          Puedes volver a la <Link to="/React-TalentoTech">página de inicio</Link>.
         </p>
       </div>
     </div>
