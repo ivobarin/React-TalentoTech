@@ -22,7 +22,6 @@ export default function Home({ carrito, setCarrito, isOpen, setIsOpen, products 
         <Productos
           products={products}
           setCarrito={setCarrito}
-          setIsOpen={setIsOpen}
         />
       </div>
       <Footer />

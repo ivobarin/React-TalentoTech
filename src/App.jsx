@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { productsList } from "./test/data";
 import Home from "./layout/Home";
 import NotFound from "./components/NotFound";
 import About from "./layout/About";
 import Shop from "./layout/Shop";
+import ProductoDetalle from "./components/ProductoDetalle";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       // API creada con https://designer.mocky.io/ para simular la obtención de productos
       // el endpoint devuelve un JSON con una lista de productos, salta como peligroso en los navegadores porque es un endpoint externo
       const response = await fetch(
-        "https://run.mocky.io/v3/bc51a190-8902-4ca0-990e-f4e262335bf7"
+        "phttps://run.mocky.io/v3/bc51a190-8902-4ca0-990e-f4e262335bf7"
       );
       if (!response.ok) {
         throw new Error("Error al cargar los productos");
@@ -56,7 +57,7 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="/React-TalentoTech/about"
             element={
               <About
                 carrito={carrito}
@@ -67,7 +68,7 @@ function App() {
             }
           />
           <Route
-            path="/shop"
+            path="/React-TalentoTech/shop"
             element={
               <Shop
                 carrito={carrito}
@@ -75,6 +76,18 @@ function App() {
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 products={products}
+              />
+            }
+          />
+          <Route
+            path="/React-TalentoTech/productos/:id"
+            element={
+              <ProductoDetalle
+                products={products}
+                carrito={carrito}
+                setCarrito={setCarrito}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
               />
             }
           />

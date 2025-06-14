@@ -6,7 +6,8 @@ export const productsList = [
     imagen:
       "https://media.zenfs.com/en/animal_gourmet_468/22f14b42485e0efe5786656095889664",
     categoria: "Bebidas",
-    stock: 10,
+    descripcion:
+      "Disfruta de un refrescante té helado, ideal para los días calurosos.",
   },
   {
     id: 2,
@@ -14,7 +15,8 @@ export const productsList = [
     precio: 35,
     imagen: "https://bonos-cocktails.com.ar/images/frutosrojos.png",
     categoria: "Bebidas",
-    stock: 5,
+    descripcion:
+      "Un delicioso cóctel de frutos rojos, perfecto para cualquier ocasión.",
   },
   {
     id: 3,
@@ -22,8 +24,9 @@ export const productsList = [
     precio: 50,
     imagen:
       "https://www.logiapetitverdot.com.ar/wp-content/uploads/2020/05/13-de-mayo-D%C3%ADa-mundial-del-Cocktail-Tres-tragos-f%C3%A1ciles-para-hacer-en-casa-1.png",
-    categoria: "Bebidas",
-    stock: 8,
+    categoria: "Coctelería",
+    descripcion:
+      "Un cocktail clásico que combina los mejores sabores para una experiencia única.",  
   },
   {
     id: 4,
@@ -32,7 +35,8 @@ export const productsList = [
     imagen:
       "https://file.aiquickdraw.com/imgcompressed/img/compressed_a68eacb78421dce0cf4d71ad86af28f1.webp",
     categoria: "Cafetería",
-    stock: 12,
+    descripcion:
+      "Un delicioso café latte con una suave capa de espuma.",
   },
   {
     id: 5,
@@ -41,38 +45,70 @@ export const productsList = [
     imagen:
       "https://cafeteriaelyireh.com/wp-content/uploads/2025/01/CAFSOL.webp",
     categoria: "Cafetería",
-    stock: 15,
+    descripcion:
+      "Un café americano clásico, fuerte y aromático.",
   },
   {
-    id: 6, 
-    nombre: 'Macchiato Latte',
+    id: 6,
+    nombre: "Macchiato Latte",
     precio: 28,
-    imagen: "https://www.nescafe.com/ar/sites/default/files/2023-09/Nes_Web3_Article_Header_Macchiato_1448x1240.png", 
-    categoria: 'Cafetería',
-    stock: 7
+    imagen: "https://www.nescafe.com/ar/sites/default/files/2023-09/Nes_Web3_Article_Header_Macchiato_1448x1240.png",
+    categoria: "Cafetería",
+    descripcion:
+      "Un delicioso macchiato latte con un toque de caramelo.",
   },
   {
-    id: 7, 
-    nombre: "Cocacola Lata",
+    id: 7,
+    nombre: "Coca Cola",
     precio: 20,
-    imagen: "https://res.cloudinary.com/piramides/image/upload/c_fill,h_564,w_395/v1/products/3716-coca-cola-lata-350ml-12un.20250502124835.png?_a=BAAAV6GX",
-    categoria: "Bebidas",
-    stock: 10
-  }, 
+    imagen: "https://www.coca-cola.com/content/dam/onexp/sv/es/brands/coca-cola/7840058001870.png",
+    categoria: "Gaseosas",
+    descripcion:
+      "Una refrescante Coca-Cola, perfecta para cualquier ocasión.",
+  },
   {
-    id: 8, 
+    id: 8,
     nombre: "Agua Mineral",
     precio: 15,
     imagen: "https://surlogix.com.ar/wp-content/uploads/2024/12/AGUA-MIN-VILLAVICENCIO-1-18509-removebg-preview.png",
-    categoria: "Bebidas",
-    stock: 10
+    categoria: "Gaseosas",
+    descripcion:
+      "Una refrescante agua mineral, ideal para hidratarse en cualquier momento.",
   },
   {
-    id: 9, 
-    nombre: "galletas Don Satur",
-    precio: 20,
-    imagen: "https://surlogix.com.ar/wp-content/uploads/2024/12/don-satur-agridulce.png",
-    categoria: "Galletas",
-    stock: 18
+    id: 9,
+    nombre: "Daiquiri Fresa",
+    precio: 55,
+    imagen: "https://monin.blob.core.windows.net/recipe/images/mrd/drink/fd7af0fd-e689-47b3-b8c4-5f2ec72f8c00-2.png",
+    categoria: "Coctelería",
+    descripcion:
+      "Un clásico daiquiri de fresa, refrescante y lleno de sabor.",
+  },
+  {
+    id: 10,
+    nombre: "Mojito",
+    precio: 60,
+    imagen: "https://www.cruzanrum.com/sites/default/files/styles/original/public/2021-11/CZ_Batch_7_CocktailCard_1000x1000_Mojito_Static%20%281%29.png.webp?itok=IRCdLXGt",
+    categoria: "Coctelería",
+    descripcion:
+      "Un mojito clásico con menta fresca y un toque de lima.",
+  },
+  {
+    id: 11,
+    nombre: "Pisco Sour",
+    precio: 70,
+    imagen: "https://www.elbalconcito.com/wp-content/uploads/2023/07/Pisco-Punch.webp",
+    categoria: "Coctelería",
+    descripcion:
+      "Un pisco sour tradicional, perfecto para disfrutar en cualquier ocasión.",
+  },
+  {
+    id: 12,
+    nombre: "Cerveza",
+    precio: 35,
+    imagen: "https://pinosbeer.uy/wp-content/uploads/2023/05/lata-japi-lager.png",
+    categoria: "Bebidas",
+    descripcion:
+      "Una cerveza artesanal de sabor único, ideal para los amantes de la cerveza.",
   }
 ]

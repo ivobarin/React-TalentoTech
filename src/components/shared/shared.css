@@ -95,12 +95,12 @@ footer p {
   color: #000;
 }
 footer a {
-  color: #fc9d55;
+  color: #000;
   text-decoration: none;
 }
 footer a:hover {
   text-decoration: underline;
-  color: #000;
+  color: #fc9d55;
 }
 footer .social-icons {
   font-size: 1.5em;
@@ -133,4 +133,28 @@ footer .social-icons a:hover {
   color: #fc9d55;
   text-decoration: underline;
   transition: color 0.3s ease-in-out;
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.product-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #4d4dc2;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px; 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

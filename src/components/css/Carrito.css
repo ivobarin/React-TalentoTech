@@ -5,7 +5,7 @@
   flex-direction: column;
   top: 0;
   right: 0;
-  width: 350px;
+  width: 400px;
   height: 100%;
   background: #e5e5e5;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
@@ -103,8 +103,9 @@
 
 .cart-items {
   flex: 1;
-  padding: 16px;
-  transition: all 0.3s ease;
+  padding-top: 20px;
+  padding-right: 25px; 
+  transition: padding-top 0.3s ease;
 }
 
 .cart-items ul {
@@ -115,11 +116,52 @@
   font-size: large;
 }
 
-.fa-trash {
-  cursor: pointer;
-  transition: color 0.3s ease;
+.cart-item {
+display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto;
+  width: 350px;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px; 
 }
 
-.fa-trash:hover {
-  color: #e68a4d;
+.cart-item:hover {
+  background-color: #f2f2f2;
+  transition: all 0.3s ease;
+}
+
+.item-controls {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Agregar un espacio entre los elementos */
+}
+
+.item-controls button {
+  background-color: #fc9d55;
+  color: white;
+  border: none;
+  padding: 4px 8px; /* Reducir el padding */
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.item-controls button:hover {
+  background-color: #e68a4d;
+  color: white; 
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+.item-price {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  margin-left: 10px; /* Espacio entre el nombre del producto y el precio */
+  padding: 10px;
 }

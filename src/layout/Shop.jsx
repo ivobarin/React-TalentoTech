@@ -16,7 +16,6 @@ export default function Shop({ carrito, setCarrito, isOpen, setIsOpen, products 
         <Productos
           products={products}
           setCarrito={setCarrito}
-          setIsOpen={setIsOpen}
         />
       </div>
       <Footer />

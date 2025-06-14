@@ -1,15 +1,36 @@
 // ProductoItem.jsx
 import React from "react";
 import "./css/Productos.css";
+import { Link } from "react-router-dom";
+import { toast, Bounce } from "react-toastify";
 
-function ProductoItem({ product, setCarrito, setIsOpen }) {
-  // Función para agregar el producto al carrito
+function ProductoItem({ product, setCarrito }) {
+
   const agregarAlCarrito = () => {
-    // Aseguramos un ID único para cada producto en el carrito
-    const productoEnCarrito = {...product, id: product.id + Date.now()}; 
-    setCarrito((prevCarrito) => [...prevCarrito, productoEnCarrito]);
-    setIsOpen(true); // Abrimos el carrito al agregar un producto
-  };
+  setCarrito((prevCarrito) => {
+    const productoExistente = prevCarrito.find((item) => item.id === product.id);
+    if (productoExistente) {
+      return prevCarrito.map((item) =>
+        item.id === product.id ? { ...item, cantidad: item.cantidad + 1 } : item
+      );
+    } else {
+      const productoEnCarrito = { ...product, cantidad: 1, id: product.id };
+      return [...prevCarrito, productoEnCarrito];
+    }
+  });
+  toast.success(`"${product.nombre}" agregado al carrito`, {
+    position: "top-left",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    icon: <i className="fa-solid fa-cart-shopping"></i>,
+    theme: "colored",
+    transition: Bounce,
+  });
+};
 
   return (
     <section className="card">
@@ -21,15 +42,21 @@ function ProductoItem({ product, setCarrito, setIsOpen }) {
       </div>
       <span className="nombre">{product.nombre}</span>
       <span className="categoria">{product.categoria}</span>
-      <span className="stock">stock: {product.stock}</span>
       <span className="precio">
         <strong>${product.precio}</strong>
       </span>
+      <Link
+        to={`/React-TalentoTech/productos/${product.id}`}
+        className="detalle-button"
+      >
+        <i className="fa-solid fa-magnifying-glass"></i>
+        <span>Ver Más</span>
+      </Link>
     </section>
   );
 }
 
-function Productos({ products, setCarrito, setIsOpen }) {
+function Productos({ products, setCarrito }) {
   if (!Array.isArray(products)) {
     return (
       <p style={{ color: "red", fontFamily: "Lexend Exa" }}>
@@ -47,7 +74,6 @@ function Productos({ products, setCarrito, setIsOpen }) {
             key={product.id}
             product={product}
             setCarrito={setCarrito}
-            setIsOpen={setIsOpen}
           />
         ))}
       </section>

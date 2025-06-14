@@ -1,0 +1,115 @@
+/* Producto detalle no encontrado */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+}
+
+.not-found-content {
+  font-family: "Lexend Exa", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 3.5em;
+  background: #de7423;
+  background: linear-gradient(
+    180deg,
+    rgba(222, 116, 35, 1) 5%,
+    rgba(252, 157, 85, 1) 95%
+  );
+  border-radius: 8px;
+  max-width: fit-content;
+}
+
+.link {
+  color: rgb(208, 173, 240); 
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.link:hover {
+    color: rgb(158, 158, 255);
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  transform: scale(1.05);
+}
+
+/* producto detalle */
+ 
+.producto-detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.6rem;
+  font-family: "Lexend Exa", sans-serif;
+}
+
+.producto-imagen {
+  position: relative;
+  top: 3rem; 
+}
+
+.producto-imagen img {
+  margin-top: 4.5rem; 
+  width: 100%;
+  height: 400px;
+  max-width: 400px;
+  object-fit: contain;
+}
+
+.producto-detalle h2 {
+  padding-top: 0.5rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+  color: #fc9d55;
+}
+
+.producto-descripcion {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  text-align: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.producto-descripcion strong {
+  font-weight: bold;
+  color: #4f4fcc;
+}
+
+.producto-descripcion-texto {
+  font-size: 1.1rem;
+  margin: 0.5rem;
+  font-size: large;
+  font-weight: 300;
+}
+
+.boton-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.boton-container button {
+  font-family: "Lexend Exa", sans-serif;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4f4fcc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton-container button:hover {
+  background-color: #3e3e9c;
+  transition: background-color 0.3s ease-in-out;
+}
