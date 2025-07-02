@@ -1,68 +1,66 @@
 /* Producto detalle no encontrado */
 .not-found-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 1.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-size: 1.5rem;
 }
 
 .not-found-content {
+font-family: "Lexend Exa", sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+padding: 3.5em;
+background: linear-gradient(
+180deg,
+rgba(79, 79, 204, 1) 5%,
+rgba(63, 30, 126, 1) 95%
+);
+border-radius: 8px;
+max-width: fit-content;
+}
+
+.producto-detalle-grid {
+  margin-top: 20vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 3.5rem;
   font-family: "Lexend Exa", sans-serif;
+}
+
+.producto-detalle-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 3.5em;
-  background: #de7423;
-  background: linear-gradient(
-    180deg,
-    rgba(222, 116, 35, 1) 5%,
-    rgba(252, 157, 85, 1) 95%
-  );
-  border-radius: 8px;
-  max-width: fit-content;
-}
-
-.link {
-  color: rgb(208, 173, 240); 
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-.link:hover {
-    color: rgb(158, 158, 255);
-  text-decoration: underline;
-  transition: all 0.3s ease;
-  transform: scale(1.05);
-}
-
-/* producto detalle */
- 
-.producto-detalle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.6rem;
-  font-family: "Lexend Exa", sans-serif;
 }
 
 .producto-imagen {
-  position: relative;
-  top: 3rem; 
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .producto-imagen img {
-  margin-top: 4.5rem; 
   width: 100%;
   height: 400px;
   max-width: 400px;
   object-fit: contain;
 }
 
-.producto-detalle h2 {
+.producto-info {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.producto-info h2 {
   padding-top: 0.5rem;
   text-transform: capitalize;
   font-size: 2rem;
@@ -73,33 +71,37 @@
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
-  text-align: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
 
 .producto-descripcion strong {
   font-weight: bold;
-  color: #4f4fcc;
+  color: rgb(79, 79, 204);
 }
 
 .producto-descripcion-texto {
-  font-size: 1.1rem;
-  margin: 0.5rem;
-  font-size: large;
+  font-size: 1.2rem;
   font-weight: 300;
+}
+
+.producto-descripcion {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  font-weight: 400;
 }
 
 .boton-container {
   display: flex;
-  justify-content: center;
+  gap: 2rem;
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
 }
 
 .boton-container button {
   font-family: "Lexend Exa", sans-serif;
-  padding: 1.5rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: 500;
   color: #fff;
@@ -110,6 +112,40 @@
 }
 
 .boton-container button:hover {
+  color: #d3d3d3;
+  background-color: rgb(62, 62, 156);
+  transition: all 0.3s ease-in-out;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  align-self: center;
+  border: 2px solid #3e3e9c;
+  border-radius: 5px;
+}
+
+.link:hover {
+  color: #fff;
+  transition: all 0.3s ease;
   background-color: #3e3e9c;
-  transition: background-color 0.3s ease-in-out;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .producto-detalle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .producto-imagen {
+    grid-column: 1;
+    margin-bottom: 1rem;
+  }
+
+  .producto-info {
+    grid-column: 1;
+  }
 }

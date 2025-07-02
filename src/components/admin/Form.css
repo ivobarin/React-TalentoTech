@@ -1,0 +1,114 @@
+.form-dialog {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-dialog form {
+  font-family: "Lexend Exa", sans-serif;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-dialog h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.form-dialog label {
+  text-align: left;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-dialog input[type="text"],
+.form-dialog input[type="number"] {
+  font-family: "Lexend Exa", sans-serif;
+  color: #333;
+  width: 100%;
+  min-width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.form-dialog button[type="submit"] {
+  font-family: "Lexend Exa", sans-serif;
+  font-weight: 350;
+  max-width: fit-content;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fc9d55;
+  width: 100%;
+}
+
+.form-dialog button[type="submit"]:hover {
+  background-color: #d17b3a;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-button button {
+  background-color: transparent;
+  border: none;
+  color: #f0f0f0;
+  font-size: 5rem;
+  cursor: pointer;
+}
+
+.close-button button:hover {
+  color: #fc9d55;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .form-dialog form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-dialog form {
+    width: 95%;
+  }
+  .form-dialog h2 {
+    font-size: 18px;
+  }
+  .form-dialog label {
+    font-size: 14px;
+  }
+}

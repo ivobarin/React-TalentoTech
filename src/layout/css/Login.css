@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-top: 7rem; /* Agregado margen superior */
+} 
+
+.form-group {
+  font-family: "Lexend Exa", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%; /* Cambiado a 100% */
+  max-width: 300px; /* Agregado max-width */
+}
+
+.form-group label {
+  color: black;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%; /* Agregado width: 100% */
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.button-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Lexend Exa", sans-serif;
+  color: black;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.button-group [type="submit"] {
+  font-family: "Lexend Exa", sans-serif;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Agregado width: 100% */
+}
+
+.button-group [type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.show-users {
+  font-family: "Lexend Exa", sans-serif;
+  color: black;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-users button {
+  font-family: "Lexend Exa", sans-serif;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%; /* Agregado width: 100% */
+}
+
+.show-users button:hover {
+  background-color: #0056b3;
+}
+
+.show-users h2 {
+  text-align: center;
+}
+
+.show-users ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5rem;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .login-container {
+    margin-top: 50px; /* Ajustado margen superior */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    margin-top: 40px; /* Ajustado margen superior */
+  }
+}

@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./css/Carrito.css";
 
-function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
+import { CarritoContext } from "../context/CarritoContext";
+
+function Carrito({ isOpen, setIsOpen }) {
   // para manejar el total del carrito
+  const { carrito, setCarrito, removeFromCart } = useContext(CarritoContext);
   const [total, setTotal] = useState(0);
   // controla la alerta de producto eliminado usando un toast
 
@@ -18,7 +21,6 @@ function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
     setCarrito([]);
   };
 
-
   const incrementarCantidad = (id) => {
     setCarrito((prevCarrito) =>
       prevCarrito.map((item) =>
@@ -27,22 +29,6 @@ function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
     );
   };
 
-  const eliminarProducto = (id) => {
-    setCarrito((prevCarrito) => {
-      const productoExistente = prevCarrito.find((item) => item.id === id);
-
-      // Verficar si el producto existe en el carrito
-      if (!productoExistente) return prevCarrito;
-
-      if (productoExistente.cantidad > 1) {
-        return prevCarrito.map((item) =>
-          item.id === id ? { ...item, cantidad: item.cantidad - 1 } : item
-        );
-      } else {
-        return prevCarrito.filter((item) => item.id !== id);
-      }
-    });
-  };
   return (
     <div className={`cart-container ${isOpen ? "open" : ""}`}>
       <div className="cart-header">
@@ -62,7 +48,9 @@ function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
               {carrito.map((producto) => (
                 <li key={producto.id} className="cart-item">
                   <div className="item-info">
-                    <span className="item-name">{producto.nombre.split(" ")[0]}</span>
+                    <span className="item-name">
+                      {producto.nombre.split(" ")[0]}
+                    </span>
                     <span className="item-price">
                       ${(producto.precio * producto.cantidad).toFixed(2)}
                     </span>
@@ -70,7 +58,7 @@ function Carrito({ carrito, setCarrito, isOpen, setIsOpen }) {
                   <div className="item-controls">
                     <button
                       className="remove-item"
-                      onClick={() => eliminarProducto(producto.id)}
+                      onClick={() => removeFromCart(producto)}
                     >
                       <i className="fa-solid fa-minus"></i>
                     </button>

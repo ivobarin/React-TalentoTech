@@ -1,0 +1,143 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 50px;
+  background-color: #e1dddd;
+  color: #333;
+  height: 60vh;
+  font-family: "Lexend Exa", sans-serif;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.admin-buttons button {
+  font-family: "Lexend Exa", sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #4caf50;
+  min-width: 200px;
+  color: white;
+}
+
+.admin-buttons button:hover {
+  background-color: #45a049;
+  transition: color 0.3s ease;
+}
+
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.title-productos {
+  font-family: "Lexend Exa", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: black;
+}
+
+.productos-grid {
+  font-family: "Lexend Exa", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-container {
+  font-family: "Lexend Exa", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #666;
+}
+
+.card-container .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.card-container .nombre {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.card-container .categoria {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fc9d55;
+}
+
+.card-container .precio {
+  padding-top: 5px;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+  font-family: "Lexend Exa", sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+  transition: color 0.3s ease;
+}
+
+#logout-button,
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+#logout-button:hover, 
+.delete-button:hover {
+  background-color: #d32f2f;
+  transition: color 0.3s ease;
+}

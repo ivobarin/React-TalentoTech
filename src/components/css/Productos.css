@@ -77,7 +77,7 @@ h1 {
 }
 
 .imagenContainer:hover img {
-  filter: blur(2px);
+  filter: brightness(0.7);
 }
 
 .imagenContainer:hover .add-button {

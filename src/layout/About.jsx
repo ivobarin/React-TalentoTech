@@ -2,10 +2,10 @@ import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
 import gif from "../images/coffee.gif";
 import "./css/About.css";
-export default function About({carrito, setCarrito, isOpen, setIsOpen}) {
+export default function About() {
   return (
     <>
-      <Header carrito={carrito} setCarrito={setCarrito} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Header/>
       <main>
         <h1>Acerca de Nosotros</h1>
         <h2>¡Bienvenido a tienda Manch!</h2>

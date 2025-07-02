@@ -3,8 +3,12 @@ import Carrito from "../Carrito";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../public/manch_logo.svg";
-export default function Header({ carrito, setCarrito, isOpen, setIsOpen }) {
-  // agregar estilo a la ruta activa
+import { useState, useContext } from "react";
+import { CarritoContext } from "../../context/CarritoContext";
+
+export default function Header() {
+  const { carrito } = useContext(CarritoContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   const countProducts = () => {
     return carrito.reduce((acc, item) => acc + item.cantidad, 0);
@@ -46,7 +50,7 @@ export default function Header({ carrito, setCarrito, isOpen, setIsOpen }) {
           </div>
           <div className="icon-container">
             <li>
-              <Link to="/React-TalentoTech/profile" className="profile-link">
+              <Link to="/React-TalentoTech/admin" className="profile-link">
                 <i className="fa-solid fa-user"></i>
               </Link>
             </li>
@@ -61,8 +65,6 @@ export default function Header({ carrito, setCarrito, isOpen, setIsOpen }) {
                   <i className="fa-solid fa-cart-shopping"></i>
                 </button>
                 <Carrito
-                  carrito={carrito}
-                  setCarrito={setCarrito}
                   isOpen={isOpen}
                   setIsOpen={setIsOpen}
                 />
