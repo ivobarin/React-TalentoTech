@@ -6,7 +6,7 @@
 - Requerimiento #4: Implementar rutas dinámicas y protegidas
 
 # Entrega Final
-## Pedientes:
+## Implementado ✅:
 ### Context API Y Rutas Protegidas (requisitos pre-entrega)
 - Reformular todo el proyecto con useContext para evitar el uso de props drilling y usar un contexto global.
 - Crear rutas protegidas para las páginas que requieren autenticación (perfil de usuario).
