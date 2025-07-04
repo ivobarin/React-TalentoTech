@@ -10,9 +10,11 @@ import { CarritoContext } from "../context/CarritoContext";
 const ProductoDetalle = () => {
   const { id } = useParams();
   const { productos, setCarrito } = useContext(CarritoContext);
-  const producto = productos.find((prod) => prod.id === parseInt(id));
+  console.log(productos, id);
+  const producto = productos.find((prod) => prod.id === id);
+  console.log(producto);
 
-  if (!producto) {
+  if (producto === undefined) {
     return (
       <div className="not-found-container">
         <div className="not-found-content">

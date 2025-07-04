@@ -104,6 +104,17 @@ function Form({ producto, isEdit, onClose, onSave }) {
             <p className="error-message">{errores.categoria}</p>
           )}
         </div>
+        <div>
+          <label>Descripción:</label>
+          <input
+            type="text"
+            name="descripcion"
+            value={nuevoProducto.descripcion || ""}
+            onChange={handleChange}
+            required
+          />
+          {errores.descripcion && <p className="error-message">{errores.descripcion}</p>}
+        </div>
         <button type="submit">Guardar</button>
       </form>
     </dialog>

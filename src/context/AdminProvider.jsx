@@ -1,37 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import swal from "sweetalert";
 import { AdminContext } from "./AdminContext";
+import { CarritoContext } from "./CarritoContext";
 
 export const AdminProvider = ({ children }) => {
-  const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { fetchProducts, productos, setProductos } = useContext(CarritoContext);
   const [seleccionado, setSeleccionado] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(false);
   const apiUrl = "https://682e5406746f8ca4a47ca177.mockapi.io/tienda-manch";
 
-  async function fetchProducts() {
+  const loadAdminProducts = async () => {
     try {
       const respuesta = await fetch(apiUrl);
       if (!respuesta.ok) {
         throw new Error(`Error ${respuesta.status}: ${respuesta.statusText}`);
       }
       const data = await respuesta.json();
-      setTimeout(() => {
-        setProductos(data);
-        setLoading(false);
-        console.log("200 OK");
-      }, 2000);
+      setProductos(data);
     } catch (error) {
       console.error("Error fetching products:", error);
-      setError(true);
-      setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     // Cargar productos iniciales
-    fetchProducts();
+    loadAdminProducts().finally(() => {
+      setCargando(false);
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleEdit = (producto) => {
@@ -41,7 +39,6 @@ export const AdminProvider = ({ children }) => {
       setSeleccionado({
         nombre: "",
         precio: 0,
-        stock: 0,
         imagen: "",
         categoria: "",
       });
@@ -56,7 +53,7 @@ export const AdminProvider = ({ children }) => {
 
   const handleDelete = async (id) => {
     swal({
-      title: "¿Estás seguro?",
+      title: `¿Eliminar este producto?`,
       text: "No podrás revertir esta acción",
       icon: "warning",
       buttons: true,
@@ -70,9 +67,12 @@ export const AdminProvider = ({ children }) => {
           .then((response) => response.json())
           .then(() => {
             setProductos(productos.filter((producto) => producto.id !== id));
+            fetchProducts(); // Refrescar la lista de productos
+            setOpenModal(false);
+            setSeleccionado(false);
             swal("Eliminado!", "El producto ha sido eliminado.", "success");
           })
-          .catch((error) => console.error(error));
+          .catch((error) => console.error("Error:", error));
       }
     });
   };
@@ -92,9 +92,11 @@ export const AdminProvider = ({ children }) => {
       const data = await respuesta.json();
       setProductos([...productos, data]);
       setOpenModal(false);
+      setSeleccionado(false);
+      fetchProducts(); // Refrescar la lista de productos
       swal(
         "¡Producto agregado!",
-        "El producto ha sido agregado exitosamente.",
+        `${data.nombre} ha sido agregado exitosamente.`,
         "success"
       );
     } catch (error) {
@@ -125,9 +127,11 @@ export const AdminProvider = ({ children }) => {
         productos.map((producto) => (producto.id === data.id ? data : producto))
       );
       setOpenModal(false);
+      fetchProducts(); // Refrescar la lista de productos
+      setSeleccionado(false);
       swal(
         "¡Producto actualizado!",
-        "El producto ha sido actualizado exitosamente.",
+        `${data.nombre} ha sido actualizado exitosamente.`,
         "success"
       );
       setSeleccionado(false);
@@ -141,10 +145,10 @@ export const AdminProvider = ({ children }) => {
     <AdminContext.Provider
       value={{
         productos,
-        loading,
         seleccionado,
         error,
         openModal,
+        cargando,
         handleEdit,
         handleCloseModal,
         handleDelete,

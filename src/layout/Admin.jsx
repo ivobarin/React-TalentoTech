@@ -10,13 +10,13 @@ export default function Admin() {
   const { handleLogout } = useContext(AuthContext);
   const {
     productos,
-    loading,
-    error,
-    handleEdit,
-    handleDelete,
-    openModal,
-    handleCloseModal,
     seleccionado,
+    error,
+    openModal,
+    cargando,
+    handleEdit,
+    handleCloseModal,
+    handleDelete,
     handleAdd,
     handleUpdate,
   } = useContext(AdminContext);
@@ -35,13 +35,16 @@ export default function Admin() {
           productos, pedidos y usuarios.
         </p>
         <section className="admin-buttons">
-          <button id="logout-button" onClick={handleLogout}>Logout</button>
+        {console.log("cargando", cargando)}
+          <button id="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
           <button onClick={handleAddProduct}>Agregar Producto</button>
         </section>
       </div>
       <div className="admin-main">
         <h2 className="title-productos">Productos</h2>
-        {loading ? (
+        { cargando ? (
           <p className="loading">Cargando productos...</p>
         ) : (
           <div className="productos-grid">
