@@ -75,6 +75,56 @@ nav ul li a:hover {
   color: #fc9d55;
 }
 
+.menu-button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+
+  header {
+    position: relative;
+  }
+
+  .logo-image {
+    width: 100px;
+    height: auto;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .menu-button {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+  .nav-links.collapsed {
+    display: flex;
+        animation: slideIn 0.3s ease-in-out forwards;
+
+  }
+}
+
+.menu-button.active {
+  color: #fc9d55;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+}
+
 /* -- FOOTER -- */
 footer {
   background-color: #e5e5e5;
@@ -148,7 +198,7 @@ footer .social-icons a:hover {
   color: white;
   font-size: 15px;
   font-weight: bold;
-  padding: 4px; 
+  padding: 4px;
   border-radius: 50%;
   text-align: center;
   line-height: 1;

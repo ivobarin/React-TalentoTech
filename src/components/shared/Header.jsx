@@ -24,19 +24,29 @@ export default function Header() {
     });
   };
 
+  const colapseMenu = () => {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("collapsed");
+    const menuButton = document.querySelector(".menu-button");
+    menuButton.classList.toggle("active");
+  };
+
   useEffect(() => {
     activeLinkStyle();
   }, []);
 
   return (
     <header className="header">
-      <nav className="nav">
+      <nav>
         <ul>
           <li>
             <Link to="/React-TalentoTech" className="logo">
-              <img src={logo} alt="Logo" width={125} />
+              <img className="logo-image" src={logo} alt="Logo" width={125} />
             </Link>
           </li>
+          <div className="menu-button" onClick={colapseMenu}>
+            <i className="fa-solid fa-bars"></i>
+          </div>
           <div className="nav-links">
             <li>
               <Link to="/React-TalentoTech">Inicio</Link>
@@ -64,10 +74,7 @@ export default function Header() {
                 <button className="cart-button" onClick={() => setIsOpen(true)}>
                   <i className="fa-solid fa-cart-shopping"></i>
                 </button>
-                <Carrito
-                  isOpen={isOpen}
-                  setIsOpen={setIsOpen}
-                />
+                <Carrito isOpen={isOpen} setIsOpen={setIsOpen} />
               </div>
             </li>
           </div>
