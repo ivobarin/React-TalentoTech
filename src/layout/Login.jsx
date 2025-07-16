@@ -14,8 +14,8 @@ export default function Login() {
 
   return (
     <>
+      <Header />
       <div className="login-container">
-        <Header />
         <Register setDialogOpen={setDialogOpen} dialogOpen={dialogOpen} />
         {!dialogOpen && (
           <>
@@ -65,12 +65,14 @@ export default function Login() {
           </button>
           {showUsers && (
             <div className="users-list">
-              <h2>Usuarios Registrados</h2>
+              <h2 className="users-list-title">Usuarios en Local Storage</h2>
               {localStorage.getItem("users") ? (
                 <ul>
                   {JSON.parse(localStorage.getItem("users")).map(
                     (user, index) => (
-                      <li key={index}>{user.email} - {user.password} - {user.role}</li>
+                      <li key={index}>
+                        {user.email} - {user.password} - {user.role}
+                      </li>
                     )
                   )}
                 </ul>

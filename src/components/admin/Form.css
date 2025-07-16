@@ -111,4 +111,14 @@
   .form-dialog label {
     font-size: 14px;
   }
+
+  .form-dialog input[type="text"],
+  .form-dialog input[type="number"] {
+    min-width: 300px;
+  }
+
+  .close-button {
+    top: -1.1rem;
+    transform: scale(0.8);
+  }
 }

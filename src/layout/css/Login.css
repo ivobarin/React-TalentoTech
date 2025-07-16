@@ -9,11 +9,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
+  min-height: 95vh;
   background-color: #f0f0f0;
-  margin-top: 7rem; /* Agregado margen superior */
-} 
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-family: "Lexend Exa", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #333;
+  line-height: 1.2;
+}
 
 .form-group {
   font-family: "Lexend Exa", sans-serif;
@@ -56,7 +65,6 @@ form {
 }
 
 .button-group {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,6 +123,16 @@ input[type="checkbox"] {
   width: 100%; /* Agregado width: 100% */
 }
 
+.users-list-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+  line-height: 1.2;
+  
+}
+
 .show-users button:hover {
   background-color: #0056b3;
 }
@@ -124,20 +142,25 @@ input[type="checkbox"] {
 }
 
 .show-users ul {
+  list-style: none;
   padding: 0;
   margin: 0;
   margin-bottom: 5rem;
 }
 
-/* Media queries */
-@media (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .login-container {
-    margin-top: 50px; /* Ajustado margen superior */
+    min-height: 80vh;
+    margin-top: 6rem;
+  }
+  .login-container h1 {
+    font-size: 2rem;
+  }
+  .form-group {
+    max-width: 400px;
   }
 }
 
-@media (max-width: 480px) {
-  .login-container {
-    margin-top: 40px; /* Ajustado margen superior */
-  }
-}
+
+
+

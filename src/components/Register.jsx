@@ -12,7 +12,7 @@ export default function Register({ setDialogOpen, dialogOpen }) {
 
   useEffect(() => {
     const alertElement = document.querySelector(".register-alert");
-    alertElement.classList.add("animate-slide-down");
+    alertElement.classList.add("animate-slide-left");
   }, []);
 
   const handleOpenDialog = () => {
@@ -33,7 +33,10 @@ export default function Register({ setDialogOpen, dialogOpen }) {
             &times;
           </button>
           <p>
-            Si no tienes una cuenta, puedes registrarte{" "}
+            Crear usuario en local storage
+            <br />
+            <br />
+            REGISTRATE{" "}
             <button className="show-register-btn" onClick={handleOpenDialog}>
               aquí
             </button>
@@ -63,6 +66,7 @@ export default function Register({ setDialogOpen, dialogOpen }) {
                   id="reg-email"
                   name="email"
                   required
+                  placeholder="(no es necesario que sea real)"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -75,6 +79,7 @@ export default function Register({ setDialogOpen, dialogOpen }) {
                   id="reg-password"
                   value={password}
                   name="password"
+                  placeholder="se puede ver en mostrar usuarios"
                   required
                   onChange={(e) => setPassword(e.target.value)}
                 />
